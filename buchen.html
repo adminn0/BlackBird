@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buchen | Black Bird</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        // Hier deinen öffentlichen Public Key von EmailJS eintragen:
+        emailjs.init("M3bJukN52BS2Bo248"); 
+     })();
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Black Bird</a>
+      <div class="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="konzerte.html">Konzerte</a></li>
+        <li><a href="buchen.html" class="active">Buchen</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="section-title">Booking Anfrage</h1>
+      <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">
+        Du möchtest uns für deine Veranstaltung, deinen Club oder ein Festival buchen? Fülle einfach das Formular aus!
+      </p>
+
+      <form id="booking-form" class="booking-form">
+        <div id="form-feedback"></div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vorname">Vorname *</label>
+            <input type="text" id="vorname" name="vorname" required>
+          </div>
+          <div class="form-group">
+            <label for="nachname">Nachname *</label>
+            <input type="text" id="nachname" name="nachname" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-Mail-Adresse *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefonnummer</label>
+            <input type="tel" id="telefon" name="telefon">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="anlass">Anlass / Event-Typ *</label>
+            <select id="anlass" name="anlass" required>
+              <option value="" disabled selected>Bitte wählen...</option>
+              <option value="Privatveranstaltung">Privatveranstaltung</option>
+              <option value="Firmenfeier">Firmenfeier</option>
+              <option value="Festival">Festival</option>
+              <option value="Club-Gig">Club-Gig</option>
+              <option value="Sonstiges">Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="datum">Wunsch-Datum & Zeit *</label>
+            <input type="datetime-local" id="datum" name="datum" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Vorhandenes Equipment vor Ort</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="Bühne"> Bühne</label>
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="PA / Anlagen-Boxen"> PA / Anlagen-Boxen</label>
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="Mischpult"> Mischpult</label>
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="Lichtanlage"> Lichtanlage</label>
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="Schlagzeug-Hardware"> Schlagzeug-Hardware</label>
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="Verstärker (Amps)"> Verstärker (Amps)</label>
+            <label class="checkbox-item"><input type="checkbox" name="equipment" value="Sonstiges"> Sonstiges</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="beschreibung">Kurze Event-Beschreibung *</label>
+          <textarea id="beschreibung" name="beschreibung" rows="4" placeholder="Beschreibe kurz die Location, erwartete Gästeanzahl etc." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="anmerkungen">Sonstige Anmerkungen</label>
+          <textarea id="anmerkungen" name="anmerkungen" rows="3" placeholder="Besondere Wünsche, Budgetvorstellung, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Anfrage Absenden</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Black Bird. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
